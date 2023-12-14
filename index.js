@@ -46,8 +46,6 @@ function genCurrencyList()
     const now = new Date(Date.now());
     document.getElementById("timestamp").innerHTML = "Currencies updated at: "+now.toUTCString();
   });
-
-  return ul;
 }
 
 
