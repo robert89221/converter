@@ -45,7 +45,7 @@ function genCurrencyList()
 
     document.getElementById("list").innerHTML = ul;
     const now = new Date(Date.now()).toUTCString();
-    document.getElementById("timestamp").innerHTML = "Currencies updated at: "+now;
+    document.getElementById("timestamp").innerHTML = "Exchange rates updated at: "+now;
   });
 }
 
