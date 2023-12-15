@@ -12,6 +12,8 @@ const currencies =
   {rate:0, code:"SEK", name:"Swedish Krona"}
 ];
 
+genCurrencyList();
+
 
 function handleInput(idx)
 {
@@ -38,13 +40,12 @@ function genCurrencyList()
     {
       const currItem = rates[0].rates.find(x => x.code === curr.code);
       curr.rate = currItem.mid;
-      const newLi = `<li>${curr.name}<br><input id="field${idx}" type="text" oninput="handleInput(${idx})"/> ${curr.code}</li>`;
-      ul += newLi;
+      ul += `<li style="margin-top: 1vw">${curr.name}<br>${curr.code} <input id="field${idx}" type="text" oninput="handleInput(${idx})"/></li>`;
     });
 
     document.getElementById("list").innerHTML = ul;
-    const now = new Date(Date.now());
-    document.getElementById("timestamp").innerHTML = "Currencies updated at: "+now.toUTCString();
+    const now = new Date(Date.now()).toUTCString();
+    document.getElementById("timestamp").innerHTML = "Currencies updated at: "+now;
   });
 }
 
